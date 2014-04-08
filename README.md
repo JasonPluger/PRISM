@@ -10,8 +10,6 @@ Once I was sure NEG and NOT were correct, I proceeded to check each operation by
 
 Once I had gone through this process for each operation, and verified that every one worked properly, I took a screenshot of my simulation results, which can be found below. 
 
-
-
-
+![waveform](https://github.com/JasonPluger/PRISM/blob/master/ALU_testbench_waveform.JPG "ALU simulation waveform")
 
 Documentation: 7Apr14: EI with Dr. Neebel; we discussed whether I had to create separate entities for some operations, and he told me it was acceptable to do so, but not necessary. We also discussed the various ways of implementing the architechture of the ALU_shell file - in particular using a process statement with either case-statements or if/elsif statements. Is the process statement required when using the if/elsif? 
