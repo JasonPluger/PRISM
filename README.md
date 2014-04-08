@@ -8,6 +8,7 @@ The first thing I did in the ALU_shell.vhd file was try and understand exactly w
     elseif OpSel="011" then
       ...
 Below is a picture with the items colored RED indicating what I added.
+
 ![Schematic](https://..... "What I added")
 
 #####Test and Debug
