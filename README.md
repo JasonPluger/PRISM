@@ -2,6 +2,13 @@
 ##Design
 ###ALU Analysis
 #####Initial test: 
+The first thing I did in the ALU_shell.vhd file was try and understand exactly what it did. I saw that there were 4 signals associated with it, namely _OpSel_, _Accumulator_, _Data_, and _Result_. I then referenced the ALU schematic to try and put a place on the picture to each of these signals. I then proceeded further down the ALU_shell file and under the ALU architecture section, and under the process statement, I added my if/elsif statements that would determine the value of _Result_. I had eight if/elsif statements, one for each value of _OpSel_ and likewise one for each operation that required implementation. in general, my code looked like the code found below:
+    if OpSel="010" then
+      Result <= "implementation of operation";
+    elseif OpSel="011" then
+      ...
+Once I had implemented each operation, I checked my syntax and proceeded to concern myself with the errors being thrown in the ALU_testbench.vhd file. One such error that held me up for a bit was a missing semi-colon in the Component declaration of the ALU (on line 50 of the template, after END COMPONENT). I was also having trouble due to the fact that the signal declarations below the component statement were named the same thing as the signals in the Port Map of the ALU. I have named my signals the same in previous testbenches, and could not figure out why it wouldn't work this time, so I simply added a "Sig" to the end of each of the signals declared below the Component statement and the change worked. I checked my syntax and proceeded with the Simulate Behavioral Model function. 
+
 During my first test of my ALU design, I noticed that the results were not matching what I had anticipated. For operations like NEG and NOT, my _Result_ output was basing itself on the current value of _Data_ and not on the value of _Acculumator_. I referenced the PRISM manual word document to verify what each operation is supposed to do - a silly thing to do after the fact, I realize that now, - and found that the problem was that I had simply misunderstood that these operations were supposed to be performed on _Acculumator_ and not on _Data_. It was easy to make the few changes in my ALU_shell file, switching what had been _Data_ with _Accumulator_, re-check my syntax, and re-launch the Simulate Behavior Model function. 
 
 
