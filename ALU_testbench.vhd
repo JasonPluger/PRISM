@@ -31,7 +31,7 @@ USE ieee.std_logic_1164.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 USE ieee.numeric_std.ALL;
-USE ieee.std_logic_unsigned.ALL;
+--USE ieee.std_logic_unsigned.ALL; not req'd in testbench, only shell
 
  
 ENTITY ALU_testbench IS
