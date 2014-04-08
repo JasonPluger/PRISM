@@ -1,5 +1,5 @@
 #PRISM Simulation
-
+##Design
 ###ALU Analysis
 #####Initial test: 
 During my first test of my ALU design, I noticed that the results were not matching what I had anticipated. For operations like NEG and NOT, my _Result_ output was basing itself on the current value of _Data_ and not on the value of _Acculumator_. I referenced the PRISM manual word document to verify what each operation is supposed to do - a silly thing to do after the fact, I realize that now, - and found that the problem was that I had simply misunderstood that these operations were supposed to be performed on _Acculumator_ and not on _Data_. It was easy to make the few changes in my ALU_shell file, switching what had been _Data_ with _Accumulator_, re-check my syntax, and re-launch the Simulate Behavior Model function. 
@@ -11,5 +11,18 @@ Once I was sure NEG and NOT were correct, I proceeded to check each operation by
 Once I had gone through this process for each operation, and verified that each one worked properly, I took a screenshot of my simulation results, which can be found below. 
 
 ![waveform](https://github.com/JasonPluger/PRISM/blob/master/ALU_testbench_waveform.JPG "ALU simulation waveform")
+
+
+
+
+
+
+##Reverse Engineering
+
+
+
+
+
+
 
 Documentation: 7Apr14: EI with Dr. Neebel; we discussed whether I had to create separate entities for some operations, and he told me it was acceptable to do so, but not necessary. We also discussed the various ways of implementing the architechture of the ALU_shell file - in particular using a process statement with either case-statements or if/elsif statements. Is the process statement required when using the if/elsif? 
