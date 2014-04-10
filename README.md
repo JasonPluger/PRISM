@@ -40,6 +40,10 @@ For the Reverse Engineering of the 50-100ns region of my simulation, I reference
 a. At 50ns, Data contains a 3 which the controller placed on the Databus from the Program Counter at 46ns. 
 b. At 55ns, the controller places whatever is on the Databus, a 3 in this case, into the Instruction Register becuause the clock is on a rising edge, and IRLd is high. 3 is the OpCode for ROR.
 c. At 75ns, the ROR function is executed by the controller because AccLd is high AND we have a rising clock edge. The values in the Accumulator before and after execution are Bh and Dh respectively, which is correct. 
+d) At 75ns the Program Counter is now at a value of 4 and the Controller places this value on the Databus. 
+e) at 85ns the Instruction Register is given the value on the Databus, 4, which is the OpCode corresponding to OR operation. 
+f) Between 85ns and 100ns, the value of Accumulator does not change.
+
 
 
 
