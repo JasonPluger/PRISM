@@ -11,7 +11,7 @@ Below is a picture with the items colored RED indicating what I added.
 
 ![Schematic](https://..... "What I added")
 
-#####Test and Debug
+#####ALU Test and Debug
 Once I had implemented each operation, I checked my syntax and proceeded to concern myself with the errors being thrown in the ALU_testbench.vhd file. One such error that held me up for a bit was a missing semi-colon in the Component declaration of the ALU (on line 50 of the template, after END COMPONENT). I was also having trouble due to the fact that the signal declarations below the component statement were named the same thing as the signals in the Port Map of the ALU. I have named my signals the same in previous testbenches, and could not figure out why it wouldn't work this time, so I simply added a "Sig" to the end of each of the signals declared below the Component statement and the change worked. I checked my syntax and proceeded with the Simulate Behavioral Model function. 
 #####More Testing and Debugging
 During my first test of my ALU design, I noticed that the results were not matching what I had anticipated. For operations like NEG and NOT, my _Result_ output was basing itself on the current value of _Data_ and not on the value of _Acculumator_. I referenced the PRISM manual word document to verify what each operation is supposed to do - a silly thing to do after the fact, I realize that now, - and found that the problem was that I had simply misunderstood that these operations were supposed to be performed on _Acculumator_ and not on _Data_. It was easy to make the few changes in my ALU_shell file, switching what had been _Data_ with _Accumulator_, re-check my syntax, and re-launch the Simulate Behavior Model function. 
@@ -40,6 +40,10 @@ For each part above, I made a process statement with an asynchronous reset-clock
   	end process;   
 
 I repeated this general pattern for each component, however each component got a different value depending on its function within the Datapath.
+
+#####Datapath Test and Debug
+To test my datapath file, I used the provided testbench file. I simulated my design and proceeded to step nano-second by nano-second through the ISim results to verify that the testbench was indeed outputting what it was supposed to output. I originally had a statement in each of my processes that reset the respective signal to "0000" when that signal's load signal was '0'. However, I found after talking to Dr. Neebel that this was incorrect, and because the components that we are working with are Flip/Flops, if we just exclude the load = '0' case from our implementation, the component will maintain its value.
+
 
 
 ##Reverse Engineering
