@@ -104,16 +104,16 @@ begin
 	-- asynchronous(reset OUTSIDE clock) Reset_L line and clocked data input.  Which control signal also determines
 	-- when data is loaded?  What are the inputs and outputs from the register?
 	
-	process(IRLd, Clock, Reset_L)
-  	begin				 
-	  if(Reset_L = '0') then
-			IR <= "0000";
-		elsif (Clock'event and Clock='1') then
-			if (IRLd = '1') then
-				IR <= Data;
-			end if;
-	  end if;
-  	end process;   
+		process(IRLd, Clock, Reset_L)
+		begin				 
+		  if(Reset_L = '0') then
+				IR <= "0000";
+			elsif (Clock'event and Clock='1') then
+				if (IRLd = '1') then
+					IR <= Data;
+				end if;
+		  end if;
+		end process;   
 	  	
 	  	 
 	-- Complete the code to implement an Memory Address Register (Hi).  Use a standard register with an 
